@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://www.stepskochi.com/img/fraction-slider/header-bg3.jpg" class="d-block w-100" alt="..." height="600px">
+            <div class="carousel-caption dark-caption d-none d-md-block">
+                <h1>Login</h1>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<style>
+
+.dark-caption {
+    color: black; /* White text color for better visibility on dark background */
+}
+
+</style>
+
+<div class="container m-5">
+    <form action="{% url "login" %}" method="post">
+
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1"  name="email"  aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1"  name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock content %}
